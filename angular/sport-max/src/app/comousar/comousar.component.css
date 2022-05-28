@@ -1,0 +1,48 @@
+.container_principal2 {
+    margin: 30px;
+    padding: 20px;
+    border-radius: 30px;
+    border: 20px solid rgba(255, 209, 133, 0.20);
+    background-color: white;
+}
+
+.titulo {
+    font-family: 'Chewy', cursive;
+    font-size: 70px;
+    text-align: center;
+    color: #47525E;
+}
+
+.listado {
+    list-style: none;
+}
+
+.fa-dumbbell {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.svg_comousar {
+    width: 30%;
+    height: 30%;
+    padding-top: 20px;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width:420px) {
+    .titulo {
+        font-size: 45px;
+    }
+    .svg_comousar,
+    .imagen_svg {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .svg_comousar,
+    .imagen_svg {
+        display: none;
+    }
+}

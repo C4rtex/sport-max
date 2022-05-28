@@ -1,0 +1,114 @@
+<div class="abrir-modal animacion fadeIn" *ngIf="modalService.modal && !authService.isAuthenticated()">
+    <div class="modal" tabindex="-1" style="display:block;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button (click)="cerrarModales()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <div class="container">
+                        <div class="mx-auto" style="width: 300px;">
+                            <h2 style="text-align: center;color:#FF9F1C;">Iniciar Sesión</h2>
+                        </div><br>
+                        <div class="mx-auto" style="width: 300px;">
+                            <p style="text-align: center;">¡Nos alegra verte de nuevo! ¿Estas preparado para una nuevo dia lleno de retos?</p>
+                        </div>
+                        <form action="post">
+                            <div class="mx-auto" style="width: 300px;">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label>Email</mat-label>
+                                    <input [(ngModel)]="usuario.username" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="pat@example.com">
+                                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                        Por favor ingrese un email valido
+                                    </mat-error>
+                                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                                        Email es <strong>requerido</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div><br>
+                            <div class="mx-auto" style="width: 300px;">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label>Contraseña</mat-label>
+                                    <input [(ngModel)]="usuario.password" type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher" placeholder="Contraseña">
+                                    <mat-error *ngIf="passwordFormControl.hasError( 'required') ">
+                                        Contraseña es <strong>requerida</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div><br>
+                            <div class="mx-auto " style="width: 300px; ">
+                                <input (click)='login()' type="submit" class="btn_form" value="Iniciar Sesion">
+                            </div>
+                        </form><br>
+                        <div class="mx-auto " style="width: 300px; ">
+                            <p style="text-align: center; ">¿Aún no eres parte de nuestra maravillosa comunidad? ¿Que esperas? ¡Unetenos!</p>
+                        </div>
+                        <div class="mx-auto " style="width: 300px; ">
+                            <button (click)="abrirModal2()" type="button " class="btn_form " data-bs-toggle="modal " data-bs-target="#formregist ">Registrarse</button>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="abrir-modal animacion fadeIn" *ngIf="modalService.modal2 && !authService.isAuthenticated()">
+    <div class="modal" tabindex="-1" style="display:block;">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content ">
+                <div class="modal-body ">
+                    <button (click)="cerrarModales()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <br>
+                    <div class="container ">
+                        <div class="mx-auto " style="width: 300px; ">
+                            <h2 style="text-align: center;color:#FF9F1C; ">Registrate</h2>
+                        </div><br>
+                        <div class="mx-auto " style="width: 300px; ">
+                            <p style="text-align: center; ">¡Unete y descubre las ventajas que se tiene para tu salud y el potencial de utilizar herramientas digitales!</p>
+                        </div>
+                        <form action="post">
+                            <div class="mx-auto " style="width: 300px; ">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label>Nombre</mat-label>
+                                    <input [(ngModel)]="nuevoUsuario.nombre" type="text" matInput [formControl]="nombreFormControl2" [errorStateMatcher]="matcher" placeholder="Juan Perizco">
+                                    <mat-error *ngIf="nombreFormControl2.hasError('minLength') && !nombreFormControl2.hasError('required')">
+                                        Por favor ingrese un nombre valido
+                                    </mat-error>
+                                    <mat-error *ngIf="nombreFormControl2.hasError('required')">
+                                        El nombre es <strong>requerido</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div><br>
+                            <div class="mx-auto" style="width: 300px;">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label>Email</mat-label>
+                                    <input [(ngModel)]="nuevoUsuario.username" type="email" matInput [formControl]="emailFormControl2" [errorStateMatcher]="matcher" placeholder="pat@example.com">
+                                    <mat-error *ngIf="emailFormControl2.hasError('email') && !emailFormControl2.hasError('required')">
+                                        Por favor ingrese un email valido
+                                    </mat-error>
+                                    <mat-error *ngIf="emailFormControl2.hasError('required')">
+                                        Email es <strong>requerido</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div><br>
+                            <div class="mx-auto" style="width: 300px;">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label>Contraseña</mat-label>
+                                    <input [(ngModel)]="nuevoUsuario.password" type="password" matInput [formControl]="passwordFormControl2" [errorStateMatcher]="matcher" placeholder="Contraseña">
+                                    <mat-error *ngIf="passwordFormControl2.hasError( 'required') ">
+                                        Contraseña es <strong>requerida</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div><br>
+                            <br>
+                            <div class="mx-auto " style="width: 300px; ">
+                                <input (click)='registro()' type="submit" class="btn_form" value="Registrar">
+                            </div>
+                        </form><br>
+                        <div class="mx-auto " style="width: 300px; ">
+                            <button type="button " (click)="cerrarModal2()" class="btn_form " data-bs-toggle="modal " data-bs-target="#forminici ">Iniciar Sesion</button>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->

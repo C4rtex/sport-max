@@ -1,0 +1,12 @@
+<div class="row">
+    <div *ngFor="let rutina of rutinas" class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">{{rutina.nombreRutina}}</h2>
+                <p class="card-text">¡Animate!</p>
+                <button (click)="abrirModal(rutina)" class="btn btn-primary">Ver Rutina</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-ver-detalle-de-rutina *ngIf="rutinaSeleccionada" [rutina]="rutinaSeleccionada"></app-ver-detalle-de-rutina>

@@ -1,0 +1,30 @@
+<div class="container" *ngIf="rutina">
+    <h1 style="text-align: center; margin: 50px;">¡Comencemos!</h1>
+    <div class="row justify-content-center">
+        <button class="btn btn-primary" *ngIf="rutina && btnActivo" (click)="iniciarRutina()">Iniciar</button>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10 bg-warning p-4 m-4">
+            <h1 style="text-align: center;">{{minutosVista}} : {{segundosVista}}</h1>
+            <h3 style="text-align: center;">Ejercicio {{numEjercicio}}</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10 bg-warning m-4">
+            <div class="row">
+                <div class="col-6">
+                    <h2>Ejercicios</h2>
+                    <ul>
+                        <li *ngFor="let ejercicio of rutina.ejercicios">
+                            <h2>{{ejercicio.nombre}}</h2>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <h2>Descanso 1:30</h2>
+                    <h2>Series {{rutina.series}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

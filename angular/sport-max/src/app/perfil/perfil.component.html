@@ -1,0 +1,24 @@
+<section>
+    <div style=" height: 40vh; display: flex;">
+        <i class="far fa-user" style="padding:50px; display: inline-block; font-size: 100px; text-align: end; width: 50%;"></i>
+        <h2 style="width: 50%; display: flex;align-items: center;">{{authService.usuario.nombre}}</h2>
+    </div>
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs float-left">
+                <li class="nav-item">
+                    <a [ngClass]="{'active': verRutina}" (click)="verVerRutina()" class="nav-link">Ver Rutinas</a>
+                </li>
+            </ul>
+            <ul class="nav nav-tabs card-header-tabs float-right">
+                <li class="nav-item">
+                    <a [ngClass]="{'active': crearRutina}" (click)="verCrearRutina()" class="nav-link">Crear Rutina</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <app-crear-rutina *ngIf="crearRutina"></app-crear-rutina>
+            <app-verrutina *ngIf="verRutina"></app-verrutina>
+        </div>
+    </div>
+</section>

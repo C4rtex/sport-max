@@ -1,0 +1,51 @@
+.btnagrrutina {
+    width: 35%;
+    min-width: 100px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90%;
+    background-color: white;
+    margin: auto;
+    border: 10px solid gray;
+    border-radius: 15px;
+}
+
+.divnuevarutina {
+    height: 40vh;
+    padding: 0px 15px 0px 0px;
+}
+
+.imagen_perf {
+    position: absolute;
+    display: block;
+    z-index: -9;
+    width: 100%;
+    padding: 0 15px 0px 15px;
+    height: 42%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    object-fit: cover;
+}
+
+.texto_inicio {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #47525E;
+}
+
+@media (max-width:768px) {
+    .texto_inicio {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:420px) {
+    .texto_inicio {
+        font-size: 16px;
+    }
+}
